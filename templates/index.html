@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generation</title>
+    <style>
+        .image-container {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <form action="/image" method="post">
+            <h1 text><label>Enter your prompt</label></h1>
+            <input type="text" name="image">
+            <input type="submit" value="Submit">    
+        </form><br>
+
+        {% if image %}
+            <img src="{{image}}" alt="{{prompt}}" width="500" height="500">
+            <h3>{{ prompt }}</h>
+        {% endif %}
+    </div>
+</body>
+</html>
