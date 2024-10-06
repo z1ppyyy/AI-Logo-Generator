@@ -10,22 +10,29 @@ client = OpenAI(api_key='YOUR API KEY')
 def index():
     return render_template('index.html')
 
-@app.route('/image', methods=['POST'])
+@app.route('/logo', methods=['GET','POST'])
 def generate_image():
+    if request.method == 'POST':
+        user_prompt = request.form.get('logo')
 
-    prompt = request.form.get('image')
+        response = client.images.generate(
+            model="dall-e-3",
+            prompt = f"You're a professional logo designer. Create a logo based on the following description: {user_prompt}",
+            size="1024x1024",
+            quality="standard",
+            n=1,
+            )
 
-    response = client.images.generate(
-        model="dall-e-3",
-        prompt=prompt,
-        size="1024x1024",
-        quality="standard",
-        n=1,
-        )
+        image = response.data[0].url
+        return render_template('logo.html', image=image, prompt=user_prompt)
 
-    image = response.data[0].url
+    return render_template('logo.html')
 
-    return render_template('index.html', image=image, prompt=prompt)
+@app.route('/download')
+def download_logo():
+    # TODO implement download button 
+    pass
+
 
 if __name__ == '__main__':
     app.run(debug=True)

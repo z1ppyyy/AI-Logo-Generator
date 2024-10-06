@@ -1,0 +1,25 @@
+* {
+    background-color: #333333;
+    color: #F5F5F5;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.image-container {
+    text-align: center;
+    padding-top: 20%;
+    
+}
+
+.logo-container {
+    text-align: center;
+    padding-top: 5%;
+}
+
+/* #input-box {
+    width: 100%;
+    font-size:14pt;
+} */
+
+.prompt {
+    padding-top: 1%;
+}

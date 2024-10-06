@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Logo Generation{% endblock %}
+
+{% block body %}
+
+<div class="logo-container d-flex flex-column align-items-center">
+    <form action="/logo" method="post" class="text-center">
+        <h3><label for="input-box">Enter your prompt</label></h3>
+        <div class="col-md-8">
+            <input type="text" class="form-control rounded-3 mb-3" id="input-box" name="logo" placeholder="e.g a modern, minimalistic logo for a tech company." style="width: 500px;">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Generate">    
+    </form><br> 
+    
+    {% if image %}
+        <img src="{{image}}" alt="{{prompt}}" width="500" height="500" class="mt-4">
+        <h3 class="prompt">{{ prompt }}</h3>
+    {% endif %}
+</div>
+
+{% endblock %}
