@@ -1,25 +1,85 @@
-* {
-    background-color: #333333;
-    color: #F5F5F5;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
+body {
+    font-family: 'Libre Baskerville', serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center;     /* Center horizontally */
 }
 
-.image-container {
+.container {
     text-align: center;
-    padding-top: 20%;
-    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center;     /* Center horizontally */
+    min-height: 80vh;        /* Ensures the container doesn't overflow */
 }
 
-.logo-container {
-    text-align: center;
-    padding-top: 5%;
+input.form-control {
+    width: 100%;            /* Full width */
+    max-width: 700px;      /* Limit width */
+    margin: 0 auto;        /* Center it */
+    box-sizing: border-box; /* Ensure padding and border are included */
 }
 
-/* #input-box {
+.btn-primary {
+    background-color: #343a40;
+    border-color: #343a40;
+    width: 100%;           /* Full width */
+    max-width: 700px;     /* Limit width */
+    box-sizing: border-box; /* Ensure padding and border are included */
+}
+
+.header {
+    background-color: #343a40;
+    color: #f8f9fa;
     width: 100%;
-    font-size:14pt;
-} */
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
 
-.prompt {
-    padding-top: 1%;
+.logo {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: xx-large;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 5%;
+    background-color: #343a40;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#logo-message {
+    display: none;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+#prompt-and-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+}
+
+img {
+    max-width: 100%;  /* Make sure the image is responsive */
+    height: auto;     /* Maintain aspect ratio */
+    max-height: 80vh; /* Prevent the image from pushing content out of view */
 }

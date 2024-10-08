@@ -3,20 +3,29 @@
 {% block title %}Logo Generation{% endblock %}
 
 {% block body %}
-
-<div class="logo-container d-flex flex-column align-items-center">
-    <form action="/logo" method="post" class="text-center">
+<div class="container">
+    <form action="/logo" method="post" id="logo-form" class="text-center">
         <h3><label for="input-box">Enter your prompt</label></h3>
-        <div class="col-md-8">
-            <input type="text" class="form-control rounded-3 mb-3" id="input-box" name="logo" placeholder="e.g a modern, minimalistic logo for a tech company." style="width: 500px;">
+        <div class="col-md-8 mx-auto custom-div text-center">
+            <input type="text" class="form-control rounded-3 mb-3" id="input-box" name="logo" placeholder="e.g a modern, minimalistic logo for a tech company." style="width: 100%; max-width: 700px;">
         </div>
-        <input type="submit" class="btn btn-primary" value="Generate">    
-    </form><br> 
+        <input type="submit" class="btn btn-primary mb-4" value="Generate">    
+    </form>
     
-    {% if image %}
-        <img src="{{image}}" alt="{{prompt}}" width="500" height="500" class="mt-4">
-        <h3 class="prompt">{{ prompt }}</h3>
-    {% endif %}
+    <div id="prompt-and-image">
+        {% if image %}
+            <h3>{{ prompt }}</h3>
+            <img src="{{ image }}" alt="{{ prompt }}" class="mt-4" style="max-width: 100%; height: auto;">
+        {% else %}
+            <p id="logo-message">Your logo coming soon...</p>
+        {% endif %}
+    </div>
 </div>
 
+<script>
+    document.getElementById('logo-form').addEventListener('submit', function() {
+        document.getElementById('logo-message').style.display = 'block';
+    });
+</script>
 {% endblock %}
+

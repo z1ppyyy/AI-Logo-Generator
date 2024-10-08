@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 client = OpenAI(api_key='YOUR API KEY')
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -13,7 +12,7 @@ def index():
 @app.route('/logo', methods=['GET','POST'])
 def generate_image():
     if request.method == 'POST':
-        user_prompt = request.form.get('logo')
+        user_prompt = request.form['logo']
 
         response = client.images.generate(
             model="dall-e-3",
