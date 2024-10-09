@@ -6,16 +6,17 @@
 <div class="container">
     <form action="/logo" method="post" id="logo-form" class="text-center">
         <h3><label for="input-box">Enter your prompt</label></h3>
-        <div class="col-md-8 mx-auto custom-div text-center">
-            <input type="text" class="form-control rounded-3 mb-3" id="input-box" name="logo" placeholder="e.g a modern, minimalistic logo for a tech company." style="width: 100%; max-width: 700px;">
+        <div class="col-md-8 mx-auto text-center">
+            <input type="text" class="form-control rounded-3 mb-3" id="input-box" name="logo" placeholder="e.g a modern, minimalistic logo for a tech company.">
         </div>
         <input type="submit" class="btn btn-primary mb-4" value="Generate">    
     </form>
     
+    
     <div id="prompt-and-image">
         {% if image %}
             <h3>{{ prompt }}</h3>
-            <img src="{{ image }}" alt="{{ prompt }}" class="mt-4" style="max-width: 100%; height: auto;">
+            <img src="{{ image }}" alt="{{ prompt }}" class="mt-4" style="max-width: 500px; height: auto;">
         {% else %}
             <p id="logo-message">Your logo coming soon...</p>
         {% endif %}
