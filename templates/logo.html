@@ -3,20 +3,22 @@
 {% block title %}Logo Generation{% endblock %}
 
 {% block body %}
-<div class="container">
-    <form action="/logo" method="post" id="logo-form" class="text-center">
+<div class="container-fluid d-flex justify-content-center align-items-center flex-column" style="height: 100vh;">
+    <form action="/logo" method="post" id="logo-form" class="text-center" style="max-width: 700px; width: 100%;">
         <h3><label for="input-box">Enter your prompt</label></h3>
-        <div class="col-md-8 mx-auto text-center">
-            <input type="text" class="form-control rounded-3 mb-3" id="input-box" name="logo" placeholder="e.g a modern, minimalistic logo for a tech company.">
+        
+        <div class="input-group mb-3">
+            <input type="text" class="form-control rounded-3" id="input-box" name="logo" placeholder="e.g. a modern, minimalistic logo for a tech company." style="height: 50px;">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-primary" style="height: 50px; width: 150px;">Generate</button>
+            </div>
         </div>
-        <input type="submit" class="btn btn-primary mb-4" value="Generate">    
     </form>
-    
-    
-    <div id="prompt-and-image">
+
+    <div id="prompt-and-image" class="mt-4 text-center" style="max-width: 700px;">
         {% if image %}
             <h3>{{ prompt }}</h3>
-            <img src="{{ image }}" alt="{{ prompt }}" class="mt-4" style="max-width: 500px; height: auto;">
+            <img src="{{ image }}" alt="{{ prompt }}" style="max-width: 300px; height: auto;">
         {% else %}
             <p id="logo-message">Your logo coming soon...</p>
         {% endif %}
@@ -29,4 +31,3 @@
     });
 </script>
 {% endblock %}
-
