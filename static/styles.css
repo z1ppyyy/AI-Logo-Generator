@@ -1,12 +1,16 @@
+* {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
     background-color: #f8f9fa;
     color: #333;
     margin: 0;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;     
 }
 
@@ -15,41 +19,32 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center; 
-    align-items: center;   
-    min-height: 80vh;       
+    align-items: center;
+    min-height: 80vh;
+}
+
+.header, footer {
+    background-color: #343a40;
+    color: #f8f9fa;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
 }
 
 .header {
-    background-color: #343a40;
-    color: #f8f9fa;
-    width: 100%;
-    padding: 10px 0;
-    text-align: center;
-    position: fixed;
     top: 0;
-    z-index: 1000;
+}
+
+footer {
+    bottom: 0;
 }
 
 .logo {
     text-decoration: none;
     color: #fff;
     font-size: xx-large;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-footer {
-    background-color: #343a40;
-    color: #f8f9fa;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.btn-primary {
-    background-color: #343a40;
-    border-color: #343a40;
 }
 
 #logo-message {
@@ -66,14 +61,15 @@ footer {
     min-height: 400px;
 }
 
-img {
-    max-width: 100%; 
-    height: auto;    
-    max-height: 80vh; 
+#prompt-and-image img {
+    max-width: 300px; 
+    height: auto;
+    max-height: 80vh;
 }
 
-.form-control {
-    height: 100px;
+.text-center {
+    padding-bottom: 100px;
+    font-weight: 400;
 }
 
 .container-fluid {
@@ -84,26 +80,6 @@ img {
     flex-direction: column;
 }
 
-.form-control {
-    width: 100%; 
+h1.display-3 {
+    font-weight: 500;
 }
-
-.input-group .form-control {
-    height: 50px;
-    border-radius: 0;
-}
-
-.input-group .btn {
-    height: 50px;
-    width: 150px;
-}
-
-#prompt-and-image img {
-    max-width: 300px; 
-    height: auto;
-}
-
-/* .text-center h1 {
-    padding-bottom: 10%;
-} */
-
