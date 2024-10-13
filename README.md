@@ -1,6 +1,6 @@
 ## AI Logo Generator 🌍
 
-## **AI Logo Generator** is a web-based application that allows users to generate logos for their company or personal projects using AI-based image generation models. The user can simply input a prompt describing the desired logo, and the application will return a custom logo design based on the input.
+# **AI Logo Generator** is a web-based application that allows users to generate logos for their company or personal projects using AI-based image generation models. The user can simply input a prompt describing the desired logo, and the application will return a custom logo design based on the input.
 
 ## Table of Contents
 
