@@ -28,7 +28,7 @@ Setup Instructions
 1. Clone the repository:
 
 ```
-git clone https://github.com/yourusername/ai-logo-generator.git
+git clone https://github.com/z1ppyyy/AI-Logo-Generator.git
 ```
 
 Navigate to the project directory:
